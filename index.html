@@ -11,18 +11,21 @@
 </head>
 
 <body>
-   <form>
-      <input type="text" id="title-bar"   />
-      <input type="text" id="author-bar"  />
-      <input type="text" id="pages-bar"   />
-      <input type="checkbox" id="is-read-bar" />
+   <main>
+      <p>really epic library!</p>
+      <button id="new-book-btn">NEW BOOK</button>
+      <div id="library"></div>
+   </main>
 
-
-      <button id="submit-btn">Submit</button>
+   <form id="new-book-form">
+      <div>
+         <input type="text" id="title-bar"   />
+         <input type="text" id="author-bar"  />
+         <input type="text" id="pages-bar"   />
+         <input type="checkbox" id="is-read-bar" />
+         <button id="submit-btn">Submit</button>
+      </div>
    </form>
-   <div id="library">
-
-   </div>
 </body>
 
 <script src="script.js"></script>

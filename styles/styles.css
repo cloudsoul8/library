@@ -1,0 +1,49 @@
+#library {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 24px;
+}
+
+#library > div {
+   width: 300px;
+   height: 400px;
+   background-color: azure;
+   border: none;
+   border-radius: 16px;
+
+   position: relative;
+}
+
+.delete-btn {
+   position: absolute;
+   top: 8px;
+   right: 16px;
+   
+   width: 24px;
+   height: 24px;
+   border: none;
+   border-radius: 50%;
+
+   background-color: red;
+
+}
+
+#new-book-form {
+   display: none;
+   align-items: center;
+   justify-content: center;
+
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   background-color: rgba(0,0,0,0.36);
+}
+
+#new-book-form > div {
+   width: 500px;
+   height: 600px;
+   background-color: aliceblue;
+}

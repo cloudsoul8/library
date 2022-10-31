@@ -19,16 +19,36 @@ function addBookToLibrary(book) {
    // to html
    const bookCard = document.createElement("div")
    bookCard.setAttribute("id", `card-${cardNum}`)
-   bookCard.innerText = `${book.title} ${book.author} ${book.pages} ${book.isRead}`
+
+   const title = document.createElement("p")
+   const author = document.createElement("p")
+   const pages = document.createElement("p")
+   const isRead = document.createElement("p")
+
+   title.setAttribute("class", "book-title")
+   author.setAttribute("class", "book-author")
+   pages.setAttribute("class", "book-pages")
+   isRead.setAttribute("class", "book-is-read")
+
+   title.innerHTML= book.title;
+   author.innerHTML= book.author;
+   pages.innerHTML= book.pages;
+   isRead.innerHTML= book.isRead ? "Have Read" : "Haven't Read";
+
+   bookCard.append(title);
+   bookCard.append(author);
+   bookCard.append(pages);
+   bookCard.append(isRead);
+
 
    // create delete button
    const deleteBtn = document.createElement("button")
-   deleteBtn.setAttribute("id", `delete-${cardNum}`)
+   deleteBtn.setAttribute("class", 'delete-btn')
    deleteBtn.addEventListener("click", event => {
       myLibrary = myLibrary.filter( (b) =>{
          return b.id !== book.id
       })
-      console.log(myLibrary)
+      // console.log(myLibrary)
       bookCard.remove()
    })
    bookCard.appendChild(deleteBtn)
@@ -36,11 +56,11 @@ function addBookToLibrary(book) {
    // add to library container
    libraryView.appendChild(bookCard)
 
+   // increment library book id
    cardNum++
 }
 
 const submitBtn = document.querySelector("#submit-btn");
-
 submitBtn.addEventListener("click", (event) => {
    let title = document.getElementById("title-bar").value
    let author = document.getElementById("author-bar").value
@@ -48,5 +68,16 @@ submitBtn.addEventListener("click", (event) => {
    let isRead = document.getElementById("is-read-bar").checked
 
    addBookToLibrary(new Book(title, author, pages, isRead))
+
+   const form = document.querySelector("#new-book-form")
+   form.style.display = "none";
    event.preventDefault()
+})
+
+
+const newBookBtn = document.querySelector("#new-book-btn");
+newBookBtn.addEventListener("click", () => {
+   const form = document.querySelector("#new-book-form")
+   form.style.display = "grid";
+
 })
