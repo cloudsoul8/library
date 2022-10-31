@@ -28,6 +28,15 @@
 
 }
 
+.read-status-btn {
+   width: 24px;
+   height: 24px;
+   border: none;
+   border-radius: 50%;
+
+   background-color: blue;
+}
+
 #new-book-form {
    display: none;
    align-items: center;

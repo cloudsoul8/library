@@ -53,6 +53,21 @@ function addBookToLibrary(book) {
    })
    bookCard.appendChild(deleteBtn)
 
+   // create change read status button
+   const readStatusBtn = document.createElement("button")
+   readStatusBtn.setAttribute("class", 'read-status-btn')
+   readStatusBtn.addEventListener("click", event => {
+      if (book.isRead) {
+         book.isRead = false
+         isRead.innerText = "Haven't Read"
+      }
+      else {
+         book.isRead = true
+         isRead.innerText = "Have Read"
+      }
+   })
+   bookCard.appendChild(readStatusBtn)
+
    // add to library container
    libraryView.appendChild(bookCard)
 
