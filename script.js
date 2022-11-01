@@ -13,14 +13,7 @@ class Book {
 }
 
 Book.prototype.changeRead = function() {
-   if (this.isRead) {
-      this.isRead = false
-      return false
-   }
-   else {
-      this.isRead = true
-      return true
-   }
+   return this.isRead ? this.isRead = false : this.isRead = true  
 }
 
 function addBookToLibrary(book) {

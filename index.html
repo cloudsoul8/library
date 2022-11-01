@@ -12,18 +12,29 @@
 
 <body>
    <main>
-      <p>really epic library!</p>
-      <button id="new-book-btn">NEW BOOK</button>
+      <span id="page-title">really epic library!</span>
+      <button id="new-book-btn">add new book</button>
       <div id="library"></div>
    </main>
 
    <form id="new-book-form">
-      <div>
+      
+      <div id="form-container">
+         <span>new book</span>
+         
+         <label for="title-bar">title</label>
          <input type="text" id="title-bar"   />
+
+         <label for="author-bar">author</label>
          <input type="text" id="author-bar"  />
+
+         <label for="pages-bar">number of pages</label>
          <input type="text" id="pages-bar"   />
+         
+         <label for="is-read-bar">book read?</label>
          <input type="checkbox" id="is-read-bar" />
-         <button id="submit-btn">Submit</button>
+
+         <button id="submit-btn">submit</button>
       </div>
    </form>
 </body>
