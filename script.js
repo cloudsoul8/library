@@ -12,6 +12,17 @@ class Book {
    }
 }
 
+Book.prototype.changeRead = function() {
+   if (this.isRead) {
+      this.isRead = false
+      return false
+   }
+   else {
+      this.isRead = true
+      return true
+   }
+}
+
 function addBookToLibrary(book) {
    // to array
    myLibrary.push(book)
@@ -57,14 +68,7 @@ function addBookToLibrary(book) {
    const readStatusBtn = document.createElement("button")
    readStatusBtn.setAttribute("class", 'read-status-btn')
    readStatusBtn.addEventListener("click", event => {
-      if (book.isRead) {
-         book.isRead = false
-         isRead.innerText = "Haven't Read"
-      }
-      else {
-         book.isRead = true
-         isRead.innerText = "Have Read"
-      }
+      book.changeRead() ? isRead.innerText = "Have Read" : isRead.innerText = "Haven't Read" 
    })
    bookCard.appendChild(readStatusBtn)
 
